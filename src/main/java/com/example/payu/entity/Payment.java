@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Entity(name = "payment_payu")
 public class Payment {
 
 	@Id
@@ -29,7 +29,7 @@ public class Payment {
 	@Column
 	private String email;
 	@Column
-	private String hash;	
+	private String hash;
 	@Column
 	private String name;
 	@Column
@@ -48,6 +48,13 @@ public class Payment {
 	private String txnId;
 	@Column
 	private String mihpayId;
+	
+	@Column
+	private String mihkey;
+	
+	@Column
+	private String mIHsalt;
+	
 	@Column
 	@Enumerated(EnumType.STRING)
 	private PaymentMode mode;
